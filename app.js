@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://koehlkm:Ballin09@jello.modulusmongo.net:27017/uxa9wiNy');
-
-
+var Exercise = require('./schema/exercise');
+var exercise = require('./routes/exercise');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -28,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/api', exercise);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

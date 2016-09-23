@@ -38,7 +38,7 @@ router.route('/exercise')
     })
 
     .get(function (req, res) {
-        exercise.find(function (err, exercise) {
+        Exercise.find(function (err, exercise) {
             if (err)
                 res.send(err);
 
